@@ -1,0 +1,4 @@
+services:
+  onesignal_api.send:
+    class: Drupal\onesignal_api\TriggerOneSignal
+    arguments: ['@http_client', '@config.factory', '@messenger', '@logger.factory']

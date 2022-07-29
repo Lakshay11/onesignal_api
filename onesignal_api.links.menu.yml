@@ -1,0 +1,5 @@
+onesignal_api.api_setting:
+  title: One Signal Settings
+  parent: system.admin_config_system
+  route_name: onesignal_api.api_setting
+  weight: 10

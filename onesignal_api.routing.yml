@@ -1,0 +1,17 @@
+onesignal_api.one_signal_notify:
+  path: '/admin/config/send'
+  defaults:
+    _title: 'OneSignal Notification Sender'
+    _form: 'Drupal\onesignal_api\Form\OneSignalNotifyForm'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+onesignal_api.api_setting:
+  path: '/admin/config/system/onesignal'
+  defaults:
+    _title: 'OneSignal Settings'
+    _form: 'Drupal\onesignal_api\Form\APIKeySettingForm'
+  requirements:
+    _permission: 'administer site configuration'
