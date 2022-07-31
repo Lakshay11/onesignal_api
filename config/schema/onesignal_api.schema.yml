@@ -1,0 +1,26 @@
+# Schema for the configuration files of the OneSignal API Support module.
+onesignal_api.settings:
+  type: config_object
+  label: 'OneSignal API Support settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
+
+onesignal_api.content_type_and_token_mapping.*:
+  type: config_entity
+  label: Content type and token mapping
+  mapping:
+    id:
+      type: string
+      label: ID
+    content_type_selection:
+      type: string
+    banner_headline:
+      type: string
+    article_headline:
+      type: string
+    article_link:
+      type: string
+    image_url:
+      type: string

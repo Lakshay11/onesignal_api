@@ -3,3 +3,16 @@ onesignal_api.api_setting:
   parent: system.admin_config_system
   route_name: onesignal_api.api_setting
   weight: 10
+
+onesignal_api.content_type_selection:
+  title: Content Type &amp; Token Selection
+  description: Content Type &amp; Token Selection OneSignal
+  parent: system.admin_config_system
+  route_name: onesignal_api.content_type_selection
+  weight: 10
+
+entity.content_type_and_token_mapping.overview:
+  title: Content type and token mappings
+  parent: system.admin_structure
+  description: 'List of content type and token mappings to extend site functionality.'
+  route_name: entity.content_type_and_token_mapping.collection

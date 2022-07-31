@@ -15,3 +15,36 @@ onesignal_api.api_setting:
     _form: 'Drupal\onesignal_api\Form\APIKeySettingForm'
   requirements:
     _permission: 'administer site configuration'
+
+
+entity.content_type_and_token_mapping.collection:
+  path: '/admin/structure/content-type-and-token-mapping'
+  defaults:
+    _entity_list: 'content_type_and_token_mapping'
+    _title: 'Content type and token mapping configuration'
+  requirements:
+    _permission: 'administer content_type_and_token_mapping'
+
+entity.content_type_and_token_mapping.add_form:
+  path: '/admin/structure/content_type_and_token_mapping/add'
+  defaults:
+    _entity_form: 'content_type_and_token_mapping.add'
+    _title: 'Add a content type and token mapping'
+  requirements:
+    _permission: 'administer content_type_and_token_mapping'
+
+entity.content_type_and_token_mapping.edit_form:
+  path: '/admin/structure/content-type-and-token-mapping/{content_type_and_token_mapping}'
+  defaults:
+    _entity_form: 'content_type_and_token_mapping.edit'
+    _title: 'Edit a content type and token mapping'
+  requirements:
+    _permission: 'administer content_type_and_token_mapping'
+
+entity.content_type_and_token_mapping.delete_form:
+  path: '/admin/structure/content-type-and-token-mapping/{content_type_and_token_mapping}/delete'
+  defaults:
+    _entity_form: 'content_type_and_token_mapping.delete'
+    _title: 'Delete a content type and token mapping'
+  requirements:
+    _permission: 'administer content_type_and_token_mapping'

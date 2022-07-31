@@ -28,33 +28,31 @@ class TriggerOneSignal {
 
   /**
    * Variable to declare article title.
-  */
+   */
   public $atitle;
 
   /**
    * Variable to declare article heading.
-  */
+   */
   public $ahead;
 
   /**
    * Variable to declare article image link.
-  */
+   */
   public $aimg;
 
   /**
    * Variable to declare article link.
-  */
+   */
   public $alink;
 
   /**
    * App key for OneSignal App.
-   *
    */
   protected $appKey;
 
   /**
    * Rest key for OneSignal App.
-   *
    */
   protected $appRestKey;
 
@@ -81,7 +79,7 @@ class TriggerOneSignal {
     $this->logger = $logger;
   }
 
-   /**
+  /**
    * Depency indection create function.
    *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
@@ -107,24 +105,25 @@ class TriggerOneSignal {
     try {
       $response = $this->httpClient->request('POST', 'https://onesignal.com/api/v1/notifications', [
         'body' => '{
-          "app_id":"'. $this->appKey .'",
+          "app_id":"' . $this->appKey . '",
           "included_segments":["Subscribed Users"],
-          "contents": { "en":" '. $atitle .' "},
-          "headings": { "en":"  '. $ahead .' "},
-          "url": " '. $alink .' ",
-          "chrome_web_image": "'. $aimg .'",
-          "ios_attachments": {"id1": "'. $aimg .'"},
-          "big_picture": "'. $aimg .'"
+          "contents": { "en":" ' . $atitle . ' "},
+          "headings": { "en":"  ' . $ahead . ' "},
+          "url": " ' . $alink . ' ",
+          "chrome_web_image": "' . $aimg . '",
+          "ios_attachments": {"id1": "' . $aimg . '"},
+          "big_picture": "' . $aimg . '"
         }',
         'headers' => [
           'Accept' => 'application/json',
-          'Authorization' => 'Basic ' . $this-> appRestKey . '',
+          'Authorization' => 'Basic ' . $this->appRestKey . '',
           'Content-Type' => 'application/json',
         ],
       ]);
       if ($response->getStatusCode() == 200) {
         $this->messenger->addMessage("Notifaction was sent");
-      } else {
+      }
+      else {
         $this->messenger->addMessage("Notifaction Sending Failed");
       }
     }

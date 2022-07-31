@@ -14,7 +14,7 @@ class OneSignalNotifyForm extends FormBase {
 
   protected $notifier;
 
-   /**
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
@@ -24,8 +24,8 @@ class OneSignalNotifyForm extends FormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function __construct(TriggerOneSignal $notifier) {
     $this->notifier = $notifier;
   }
@@ -48,7 +48,7 @@ class OneSignalNotifyForm extends FormBase {
       '#size' => 60,
       '#maxlength' => 128,
       '#description' => $this->t('Banner Headline'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     $form['article_headline'] = [
@@ -57,7 +57,7 @@ class OneSignalNotifyForm extends FormBase {
       '#size' => 60,
       '#maxlength' => 128,
       '#description' => $this->t('Article Headline'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     $form['article_link'] = [
@@ -66,7 +66,7 @@ class OneSignalNotifyForm extends FormBase {
       '#maxlength' => 255,
       '#size' => 30,
       '#description' => $this->t('Link to reach Article.'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     $form['image_url'] = [
@@ -75,7 +75,7 @@ class OneSignalNotifyForm extends FormBase {
       '#maxlength' => 255,
       '#size' => 30,
       '#description' => $this->t('Link to Image, to show in'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     $form['actions'] = [
@@ -90,6 +90,9 @@ class OneSignalNotifyForm extends FormBase {
     return $form;
   }
 
+  /**
+   *
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
     $this->notifier->posts(
