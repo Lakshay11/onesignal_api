@@ -26,4 +26,3 @@ To use the service in your custom code, check the service under src directory (T
 ## Support
 
 For support, email codewithlakshay@gmail.com
-
